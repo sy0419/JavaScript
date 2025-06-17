@@ -14,7 +14,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question('Enter string: ', (str2) => {
+  rl.question('Enter string: ', (str2) => {
   console.log(`result: ${str2}`);
   rl.close();
 });
@@ -29,7 +29,7 @@ let input = [];
 r2.on('line', function (line) {
     input = [line];
 }).on('close',function(){
-    str3 = input[0];
+    let str3 = input[0];
     console.log(str3);
 });
 
@@ -83,9 +83,17 @@ r2.on('line', function (line) {
 // 입력/출력 인터페이스를 생성합니다. input: process.stdin → 키보드로 입력 받고 output: process.stdout → 터미널에 출력합니다.
 
 // let input = [];
+// 입력된 값을 저장할 배열입니다. 여러 줄 입력 받을 때 유용하게 쓸 수 있어요.
+
 // r2.on('line', function (line) {
 //     input = [line];
+// line 이벤트는 사용자가 엔터를 칠 때마다 발생합니다. line에 입력된 문자열 한 줄이 들어옵니다.
+// 현재는 매 줄마다 input 배열을 새로 덮어쓰기 때문에 마지막 한 줄만 남습니다.
+// 예: 사용자가 apple을 입력하면 input = ['apple']이 됩니다.
+
 // }).on('close',function(){
-//     str3 = input[0];
+//     let str3 = input[0];
 //     console.log(str3);
 // });
+// 사용자가 Ctrl + D (Mac/Linux) 또는 Ctrl + Z (Windows) 를 누르면 close 이벤트 발생합니다.
+// input[0]에 있는 첫 줄을 str3에 저장하고 그 값을 출력합니다.
