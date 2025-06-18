@@ -15,7 +15,6 @@ rl.on('line', function (line) {
     rl.close();
 });
 
-
 // #2
 // const readline = require('readline');
 // const rl = readline.createInterface({
