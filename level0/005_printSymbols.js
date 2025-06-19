@@ -12,4 +12,4 @@ r1.on('line', function(line) {
 }).on('close', function() {
     const str = input.join('');
     console.log(str);  
-})
+});
