@@ -15,6 +15,12 @@ function solution(a, b) {
 }
 console.log(solution(12, 3))
 
+
+function solution2(a, b) {
+    return Math.max(Number(`${a}${b}`), Number(`${b}${a}`))
+}
+console.log(solution(12, 3))
+
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
