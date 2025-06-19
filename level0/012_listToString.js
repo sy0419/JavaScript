@@ -3,6 +3,12 @@
 // 1 ≤ arr의 길이 ≤ 200
 // arr의 원소는 전부 알파벳 소문자로 이루어진 길이가 1인 문자열입니다.
 
+function solution(arr) {
+    return arr.join("")
+}
+
+console.log(solution(["a", "b", "c"]));
+
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
@@ -18,3 +24,4 @@ rl.on('line', function(line) {
     const result = input.join('');
     console.log(result); 
 });
+
