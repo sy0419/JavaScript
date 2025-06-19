@@ -4,12 +4,12 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-let input = []
+let input = [];
 
 rl.on('line', function(line) {
     input = line.split('');
     rl.close();
 }).on('close', function() {
-    const str = input.join('');
-    console.log(str);  
+    const str = `!@#$%^&*(\\'"<>?:;`;
+    console.log(str);
 });
