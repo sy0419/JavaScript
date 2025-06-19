@@ -3,16 +3,16 @@
 // 제한사항) 1 ≤ str1, str2의 길이 ≤ 10
 
 const readline = require('readline');
-const r1 = readline.createInterface({
+const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
 let input = []
 
-r1.on('line', function (line) {
+rl.on('line', function (line) {
     input = line.split(' ');
-    r1.close();
+    rl.close();
 }).on('close', function() {
     const str1 = input[0];
     const str2 = input[1];
