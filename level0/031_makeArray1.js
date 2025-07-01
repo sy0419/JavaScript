@@ -4,7 +4,7 @@
 // 제한사항) 1 ≤ l ≤ r ≤ 1,000,000
 
 function solution(l, r) {
-     let result = [];
+    let result = [];
     for (let i = l; i <= r; i++) {
         let strI = String(i);
         if (strI.split('').every(char => char === '0' || char === '5')) {
