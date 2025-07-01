@@ -5,6 +5,24 @@
 // stk에 원소가 있는데 stk의 마지막 원소가 arr[i]보다 크거나 같으면 stk의 마지막 원소를 stk에서 제거합니다.
 // 위 작업을 마친 후 만들어진 stk를 return 하는 solution 함수를 완성해 주세요.
 
+function solution(arr) {
+    let stk = [];
+    let i = 0;
+    while (i < arr.length) {
+        if (stk.length === 0) {
+            stk.push(arr[i]);
+            i++;
+        } else if (stk[stk.length - 1] < arr[i]) {
+            stk.push(arr[i]);
+            i++;
+        } else {
+            stk.pop();
+        }
+    }
+    return stk;
+}
+console.log(solution([1, 4, 2, 5, 3]));
+
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
@@ -20,7 +38,6 @@ rl.question('Array: ', (arr) => {
 
 rl.on('close', function() {
     const arr = input[0].split(/[\s,]+/).map(Number);
-    console.log('Parsed arr:', arr);
     let stk = [];
     let i = 0;
     while (i < arr.length) {
