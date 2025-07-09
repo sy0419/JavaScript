@@ -5,6 +5,11 @@
 // 1 ≤ index_list의 길이 ≤ 1,000
 // 0 ≤ index_list의 원소 < my_string의 길이
 
+function solution(my_string, index_list) {
+    return index_list.map(i => my_string[i]).join('');
+}
+console.log(solution("cvsgiorszzzmrpaqpe", [16, 6, 5, 3, 12, 14, 11, 11, 17, 12, 7]));
+
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
@@ -23,12 +28,9 @@ rl.question('My string: ', (my_string) => {
 
 rl.on('close', function() {
     const myString = input[0];
-    const indexList = input[1].split(',').map(Number);
+    const indexList = input[1].split(',').map(s => Number(s.trim()));
 
-    function solution(my_string, index_list) {
-        return index_list.map(i => my_string[i]).join('');
-    }
+    const result = indexList.map(i => myString[i]).join('');
 
-    const result = solution(myString, indexList);
     console.log('Result:', result);
 })
